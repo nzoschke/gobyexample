@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-eqiv="content-type" content="text/html;charset=utf-8">
+    <title>AWS by Example: AWS Configure</title>
+    <link rel=stylesheet href="site.css">
+  </head>
+  <script type="text/javascript">
+    if (window.location.host == "gobyexample.com") {
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34996217-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    }
+  </script>
+  <body>
+    <div class="example" id="aws-configure">
+      <h2><a href="./">AWS by Example</a>: AWS Configure</h2>
+      
+      <table>
+        
+        <tr>
+          <td class="docs">
+            <p>All interactions with AWS require creating and using &ldquo;Access Keys&rdquo;.</p>
+
+<p>We can create &ldquo;root&rdquo; access keys on the
+<a href="https://console.aws.amazon.com/iam/home?region=us-east-1#security_credential">&ldquo;Security Credentials&rdquo; dashboard</a>.</p>
+
+<p>Click &ldquo;Continue to Security Credentials&rdquo;, &ldquo;Access Keys (Access Key ID and Secret Access Key)&rdquo;,
+&ldquo;Create New Access Key&rdquo;, and &ldquo;Show Access Key&rdquo;.</p>
+
+          </td>
+          <td class="code empty">
+            
+          </td>
+        </tr>
+        
+      </table>
+      
+      <table>
+        
+        <tr>
+          <td class="docs">
+            <p>To interact with AWS via the Command Line Interface
+(CLI), configure credentials with <code>aws configure</code></p>
+
+          </td>
+          <td class="code leading">
+            <div class="highlight"><pre><span class="gp">$</span> aws configure
+<span class="go">AWS Access Key ID [None]: &lt;Paste Access Key ID&gt;</span>
+<span class="go">AWS Secret Access Key [None]: &lt;Paste Secret Access Key&gt;</span>
+<span class="go">Default region name [None]: us-east-1</span>
+<span class="go">Default output format [None]: json</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Credentials are stored in our home directory:</p>
+
+          </td>
+          <td class="code leading">
+            <div class="highlight"><pre><span class="gp">$</span> cat ~/.aws/config
+<span class="go">[default]</span>
+<span class="go">aws_access_key_id = AKIA...</span>
+<span class="go">aws_secret_access_key = SFoH...</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>We can then manage AWS resources with the CLI.</p>
+
+          </td>
+          <td class="code leading">
+            <div class="highlight"><pre><span class="gp">$</span> aws ec2 describe-instances
+<span class="go">{</span>
+<span class="go">    &quot;Reservations&quot;: []</span>
+<span class="go">}</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Now that we can interact with the AWS APIs with the
+CLI, let&rsquo;s learn more about the numerous infrastructure
+services.</p>
+
+          </td>
+          <td class="code empty">
+            
+          </td>
+        </tr>
+        
+      </table>
+      
+      
+      <p class="footer">
+        by <a href="https://twitter.com/nzoschke">@nzoschke</a> | <a href="mailto:nzoschke@gmail.com">feedback</a> | <a href="https://github.com/nzoschke/awsbyexample">source</a> | <a href="https://github.com/nzoschke/awsbyexample#license">license</a>
+      </p>
+      <p class="footer">
+        a remix of the excellent <a href="https://gobyexample.com">Go by Example</a>
+      </p>
+    </div>
+  </body>
+</html>
