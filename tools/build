@@ -2,6 +2,6 @@
 
 set -e
 
-tools/format
+tools/format || true
 tools/measure
 tools/generate
